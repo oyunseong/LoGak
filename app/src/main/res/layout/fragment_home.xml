@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,46 +12,100 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- 감소 각인 -->
-        <TextView
-            android:id="@+id/decrease_in_attack_power_text"
+        <com.oys.logak.ImprintingView
+            android:id="@+id/home_imprinting1"
             style="@style/imprinting_red_font"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/decrease_in_attack_power"
-            app:layout_constraintStart_toStartOf="@id/home_constraintLayout"
-            app:layout_constraintTop_toTopOf="@id/home_constraintLayout"
-             />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:levelText="Lv. 3"
+            app:overCountText="+7"
+            app:text="공격력 감소" />
 
-        <TextView
-            android:id="@+id/decrease_in_attack_power_level_text"
+        <com.oys.logak.ImprintingView
+            android:id="@+id/home_imprinting2"
             style="@style/imprinting_red_font"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lv. 3"
-            android:layout_marginLeft="5dp"
-            app:layout_constraintLeft_toRightOf="@id/decrease_in_attack_power_text"
-            app:layout_constraintTop_toTopOf="@id/home_constraintLayout"
-            />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_imprinting1"
+            app:levelText="Lv. 1"
+            app:overCountText="+1"
+            app:text="공격속도 감소" />
 
-        <TextView
-            android:id="@+id/decrease_in_attack_power_over_count_text"
-            style="@style/imprinting_red_font"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+6"
-            android:layout_marginLeft="5dp"
-            app:layout_constraintLeft_toRightOf="@id/decrease_in_attack_power_level_text"
-            app:layout_constraintTop_toTopOf="@id/home_constraintLayout"
-            />
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/blank"
-            app:layout_constraintTop_toBottomOf="@id/decrease_in_attack_power_text"
-            app:layout_constraintLeft_toLeftOf="@id/home_constraintLayout"
-            />
+            android:id="@+id/acc_necklace"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/acc_necklace"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_imprinting2" />
+
+        <Spinner
+            android:id="@+id/necklace_increasing_spinner1"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_spinner"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/necklace_effect_number_spinner1"
+            app:layout_constraintTop_toBottomOf="@id/acc_necklace" />
+
+        <Spinner
+            android:id="@+id/necklace_effect_number_spinner1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_spinner"
+            app:layout_constraintLeft_toRightOf="@id/necklace_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/necklace_increasing_spinner1" />
+
+        <Spinner
+            android:id="@+id/necklace_increasing_spinner2"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_spinner"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/necklace_effect_number_spinner2"
+            app:layout_constraintTop_toBottomOf="@id/necklace_increasing_spinner1" />
+
+        <Spinner
+            android:id="@+id/necklace_effect_number_spinner2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_spinner"
+            app:layout_constraintLeft_toRightOf="@id/necklace_increasing_spinner2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/necklace_increasing_spinner2" />
+
+        <Spinner
+            android:id="@+id/necklace_decreasing_spinner"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_spinner"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/necklace_effect_number_spinner3"
+            app:layout_constraintTop_toBottomOf="@id/necklace_increasing_spinner2" />
+
+        <Spinner
+            android:id="@+id/necklace_effect_number_spinner3"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_spinner"
+            app:layout_constraintLeft_toRightOf="@id/necklace_decreasing_spinner"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/necklace_decreasing_spinner" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
