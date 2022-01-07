@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/imprinting_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- 감소 각인 -->
+    <TextView
+        android:id="@+id/imprinting_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textColor="#000000"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/imprinting_level_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+
+        app:layout_constraintLeft_toRightOf="@id/imprinting_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/imprinting_over_count_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+
+        app:layout_constraintLeft_toRightOf="@id/imprinting_level_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/blank1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imprinting_text" />
+
+    <ImageView
+        android:id="@+id/blank2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/blank1"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ImprintingView">
+        <attr name="bgColor" format="reference|integer" />
+        <attr name="symbol" format="reference|integer" />
+
+        <attr name="src" format="reference|string" />
+
+        <attr name="text" format="reference|string" />
+        <attr name="levelText" format="reference|string" />
+        <attr name="overCountText" format="reference|string" />
+        <attr name="textColor" format="reference|integer" />
+
+        <attr name="blank1" format="reference|string" />
+        <attr name="blank2" format="reference|string" />
+        <attr name="blank3" format="reference|string" />
+        <attr name="blank4" format="reference|string" />
+        <attr name="blank5" format="reference|string" />
+        <attr name="blank6" format="reference|string" />
+        <attr name="blank7" format="reference|string" />
+        <attr name="blank8" format="reference|string" />
+        <attr name="blank9" format="reference|string" />
+        <attr name="blank10" format="reference|string" />
+        <attr name="blank11" format="reference|string" />
+        <attr name="blank12" format="reference|string" />
+        <attr name="blank13" format="reference|string" />
+        <attr name="blank14" format="reference|string" />
+        <attr name="blank15" format="reference|string" />
+    </declare-styleable>
+
+</resources>
