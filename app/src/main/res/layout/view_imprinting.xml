@@ -10,7 +10,7 @@
         android:id="@+id/imprinting_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:text="공격력 감소"
         android:textColor="#000000"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-
+        android:text="Lv. 3"
         app:layout_constraintLeft_toRightOf="@id/imprinting_text"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-
+        android:text="+7"
         app:layout_constraintLeft_toRightOf="@id/imprinting_level_text"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,6 +48,126 @@
         android:layout_height="20dp"
         android:src="@drawable/blank"
         app:layout_constraintLeft_toRightOf="@id/blank1"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <ImageView
+        android:id="@+id/blank3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/blank2"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <ImageView
+        android:id="@+id/blank4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/blank3"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <ImageView
+        android:id="@+id/blank5"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/blank4"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <TextView
+        android:id="@+id/line1"
+        android:layout_width="3dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/right_line_838383_1dp"
+        app:layout_constraintLeft_toRightOf="@id/blank5"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <ImageView
+        android:id="@+id/blank6"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/line1"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <ImageView
+        android:id="@+id/blank7"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/blank6"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <ImageView
+        android:id="@+id/blank8"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/blank7"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <ImageView
+        android:id="@+id/blank9"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/blank8"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <ImageView
+        android:id="@+id/blank10"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/blank9"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <TextView
+        android:id="@+id/line2"
+        android:layout_width="3dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/right_line_838383_1dp"
+        app:layout_constraintLeft_toRightOf="@id/blank10"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <ImageView
+        android:id="@+id/blank11"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/line2"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <ImageView
+        android:id="@+id/blank12"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/blank11"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <ImageView
+        android:id="@+id/blank13"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/blank12"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <ImageView
+        android:id="@+id/blank14"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/blank13"
+        app:layout_constraintTop_toTopOf="@id/blank1" />
+
+    <ImageView
+        android:id="@+id/blank15"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/blank"
+        app:layout_constraintLeft_toRightOf="@id/blank14"
         app:layout_constraintTop_toTopOf="@id/blank1" />
 
 

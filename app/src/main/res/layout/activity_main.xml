@@ -14,7 +14,8 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
-            android:background="@color/white"
+            android:background="@drawable/bottom_line_838383_1dp"
+            android:backgroundTint="@color/white"
             app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
 
             <ImageView

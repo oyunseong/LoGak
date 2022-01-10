@@ -108,6 +108,7 @@ class ImprintingView : ConstraintLayout {
         typedArray.recycle()
     }
 
+
     fun setText(text: String, levelText: String, overCountText: String) {
         binding.imprintingText.text = text
         binding.imprintingLevelText.text = levelText
