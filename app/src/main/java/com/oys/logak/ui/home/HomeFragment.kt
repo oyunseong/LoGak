@@ -21,6 +21,7 @@ import com.oys.logak.ui.ImprintingModel
  */
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+    val setTestBtn = mutableSetOf<ImprintingModel>()
 
     private val imprintingArray by lazy {
         arrayOf(
@@ -38,7 +39,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         )
     }
 
-    val itemSpinnerArray by lazy {
+    val increasingImprintingArray by lazy {
         arrayOf<Spinner>(
             binding.necklaceIncreasingSpinner1,
             binding.necklaceIncreasingSpinner2,
@@ -66,6 +67,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
             binding.gakinBookIncreasingSpinner1,
             binding.gakinBookIncreasingSpinner2,
+        )
+    }
+
+    val decreasingImprintingArray by lazy {
+        arrayOf<Spinner>(
+
+
         )
     }
 
@@ -120,7 +128,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
         homeViewModel.imprintingModels.observe(viewLifecycleOwner, {
             "ui model observe $it".log()
+
         })
+
+        binding.testBtn.setOnClickListener {
+            showToast("" + setTestBtn)
+            binding.homeImprinting1.visibility = View.VISIBLE
+            binding.homeImprinting1.setText(setTestBtn.toString(), "", "")
+        }
     }
 
     private fun setupSpinner() {
@@ -130,10 +145,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         val stoneEffectNumberArray = resources.getStringArray(R.array.ability_effect_number)
         val gakinBookEffectNumberArray = resources.getStringArray(R.array.gakin_effect_number)
 
-        itemSpinnerArray.forEachIndexed { index, spinner ->
+        // 증가 각인 스피너 부분
+        increasingImprintingArray.forEachIndexed { index, spinner ->
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(p0: AdapterView<*>?) {
-                    //TODO("Not yet implemented")
                 }
 
                 override fun onItemSelected(
@@ -142,13 +157,30 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     position: Int,
                     id: Long
                 ) {
-//                    "onItemSelected position : $position id: $id ${numberSpinnerArray[index].selectedItem.toString().toInt()}".log()
+                    // 선택을 하는 순간
                     val set = mutableSetOf<ImprintingModel>()
-                    for (i in 0..scoreSpinnerArray.size) {
+
+                    when(position){
+                        0 -> return
+                    }
+                    for (i in 0..increasingImprintingArray.size) {
+                        "증가 각인 position${position}: " + increasingImprintingArray[position].selectedItem.toString()
+                            .log()
+                        "감소 각인 position${position} : ${scoreSpinnerArray[position].selectedItemId.toInt()}".log()
+
+                        setTestBtn.add(
+                            ImprintingModel(
+                                text = increasingImprintingArray[position].selectedItem.toString(),
+                                score = scoreSpinnerArray[position].selectedItemId.toInt()
+                            )
+                        )
+
                         set.add(
                             ImprintingModel(
-                                text = itemSpinnerArray[i].selectedItem.toString(),
-                                score = scoreSpinnerArray[i].selectedItem.toString().toInt()
+                                text = "", //itemSpinnerArray[i].selectedItem.toString(),
+//                                score = scoreSpinnerArray[i].selectedItem.toString().toInt()
+//                                text = "test",
+                                score = 1
                             )
                         )
                     }
@@ -198,12 +230,18 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     id: Long
                 ) {
                     "onItemSelected position : $position id: $id ${scoreSpinnerArray[index].selectedItem}".log()
-                    homeViewModel.setUiModel(
-                        ImprintingModel(
-                            text = itemSpinnerArray[index].selectedItem.toString(),
-                            score = scoreSpinnerArray[index].selectedItem.toString().toInt()
+                    val set = mutableSetOf<ImprintingModel>()
+                    for (i in 0..scoreSpinnerArray.size) {
+                        set.add(
+                            ImprintingModel(
+//                                text = itemSpinnerArray[i].selectedItem.toString(),
+//                                score = scoreSpinnerArray[i].selectedItem.toString().toInt()
+                                text = "test2",
+                                score = 0
+                            )
                         )
-                    )
+                    }
+                    homeViewModel.setUiModel(set)
                 }
             }
 
@@ -213,8 +251,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             binding.abilityEffectNumberSpinner2.adapter = getSpinnerAdapter(stoneEffectNumberArray)
             binding.abilityEffectNumberSpinner3.adapter = getSpinnerAdapter(stoneEffectNumberArray)
 
-            binding.gakinBookEffectNumberSpinner1.adapter = getSpinnerAdapter(gakinBookEffectNumberArray)
-            binding.gakinBookEffectNumberSpinner2.adapter = getSpinnerAdapter(gakinBookEffectNumberArray)
+            binding.gakinBookEffectNumberSpinner1.adapter =
+                getSpinnerAdapter(gakinBookEffectNumberArray)
+            binding.gakinBookEffectNumberSpinner2.adapter =
+                getSpinnerAdapter(gakinBookEffectNumberArray)
         }
 
     }
