@@ -43,27 +43,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         arrayOf<Spinner>(
             binding.necklaceIncreasingSpinner1,
             binding.necklaceIncreasingSpinner2,
-            binding.necklaceDecreasingSpinner,
 
             binding.earringIncreasingSpinner1,
             binding.earringIncreasingSpinner2,
-            binding.earringDecreasingSpinner,
 
             binding.earring2IncreasingSpinner1,
             binding.earring2IncreasingSpinner2,
-            binding.earring2DecreasingSpinner,
 
             binding.ring1IncreasingSpinner1,
             binding.ring1IncreasingSpinner2,
-            binding.ring1DecreasingSpinner,
 
             binding.ring2IncreasingSpinner1,
             binding.ring2IncreasingSpinner2,
-            binding.ring2DecreasingSpinner,
 
             binding.abilityIncreasingSpinner1,
             binding.abilityIncreasingSpinner2,
-            binding.abilityDecreasingSpinner,
 
             binding.gakinBookIncreasingSpinner1,
             binding.gakinBookIncreasingSpinner2,
@@ -72,39 +66,47 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     val decreasingImprintingArray by lazy {
         arrayOf<Spinner>(
-
-
+            binding.necklaceDecreasingSpinner,
+            binding.earringDecreasingSpinner,
+            binding.earring2DecreasingSpinner,
+            binding.ring1DecreasingSpinner,
+            binding.ring2DecreasingSpinner,
+            binding.abilityDecreasingSpinner,
         )
     }
 
-    val scoreSpinnerArray by lazy {
+    val upScoreSpinnerArray by lazy {
         arrayOf<Spinner>(
             binding.necklaceEffectNumberSpinner1,
             binding.necklaceEffectNumberSpinner2,
-            binding.necklaceEffectNumberSpinner3,
 
             binding.earringEffectNumberSpinner1,
             binding.earringEffectNumberSpinner2,
-            binding.earringEffectNumberSpinner3,
 
             binding.earring2EffectNumberSpinner1,
             binding.earring2EffectNumberSpinner2,
-            binding.earring2EffectNumberSpinner3,
 
             binding.ring1EffectNumberSpinner1,
             binding.ring1EffectNumberSpinner2,
-            binding.ring1EffectNumberSpinner3,
 
             binding.ring2EffectNumberSpinner1,
             binding.ring2EffectNumberSpinner2,
-            binding.ring2EffectNumberSpinner3,
 
             binding.abilityEffectNumberSpinner1,
             binding.abilityEffectNumberSpinner2,
-            binding.abilityEffectNumberSpinner3,
 
             binding.gakinBookEffectNumberSpinner1,
             binding.gakinBookEffectNumberSpinner2,
+        )
+    }
+    val downScoreSpinnerArray by lazy {
+        arrayOf(
+            binding.necklaceEffectNumberSpinner3,
+            binding.earringEffectNumberSpinner3,
+            binding.earring2EffectNumberSpinner3,
+            binding.ring1EffectNumberSpinner3,
+            binding.ring2EffectNumberSpinner3,
+            binding.abilityEffectNumberSpinner3,
         )
     }
 
@@ -132,11 +134,18 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         })
 
         binding.testBtn.setOnClickListener {
-            showToast("" + setTestBtn)
-            binding.homeImprinting1.visibility = View.VISIBLE
-            binding.homeImprinting1.setText(setTestBtn.toString(), "", "")
+            if (map.containsKey("공격력 감소")) {
+                binding.homeImprinting1.visibility= View.VISIBLE
+            }else if(map.containsKey("공격속도 감소")){
+                binding.homeImprinting2.visibility= View.VISIBLE
+            }
+//            showToast("" + setTestBtn)
+//            binding.homeImprinting1.visibility = View.VISIBLE
+//            binding.homeImprinting1.setText(setTestBtn.toString(), "", "")
         }
     }
+
+    private val map = mutableMapOf<String, Int>()
 
     private fun setupSpinner() {
         val increasingArray = resources.getStringArray(R.array.increasing_imprinting)
@@ -144,6 +153,72 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         val accEffectNumberArray = resources.getStringArray(R.array.acc_effect_number)
         val stoneEffectNumberArray = resources.getStringArray(R.array.ability_effect_number)
         val gakinBookEffectNumberArray = resources.getStringArray(R.array.gakin_effect_number)
+        val decreasingSet = mutableSetOf<ImprintingModel>()
+
+        decreasingImprintingArray.forEachIndexed { index, spinner ->
+            spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    when (position) {
+
+                        0 -> {
+                            map.put("", 0)
+                        }
+                        else -> {
+                            val key = decreasingImprintingArray[position].selectedItem.toString()
+                            val value = downScoreSpinnerArray[position].selectedItemId.toInt()
+                            "key : "+key.log()
+                            "value : ${value}".log()
+                            if (map.containsKey(key)) {
+                                map.replace(key, value)
+                            } else {
+                                map[key] = value
+                            }
+                        }
+                    }
+
+
+                }
+
+                override fun onNothingSelected(p0: AdapterView<*>?) {
+
+                }
+            }
+        }
+
+        downScoreSpinnerArray.forEachIndexed { index, spinner ->
+            spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(p0: AdapterView<*>?) {
+                    //TODO("Not yet implemented")
+                }
+
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    "onItemSelected position : $position id: $id ${upScoreSpinnerArray[index].selectedItem}".log()
+                    val set = mutableSetOf<ImprintingModel>()
+                    for (i in 0..upScoreSpinnerArray.size) {
+                        set.add(
+                            ImprintingModel(
+//                                text = itemSpinnerArray[i].selectedItem.toString(),
+//                                score = scoreSpinnerArray[i].selectedItem.toString().toInt()
+                                text = "test2",
+                                score = 0
+                            )
+                        )
+                    }
+                    homeViewModel.setUiModel(set)
+                }
+            }
+        }
+
 
         // 증가 각인 스피너 부분
         increasingImprintingArray.forEachIndexed { index, spinner ->
@@ -160,18 +235,29 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     // 선택을 하는 순간
                     val set = mutableSetOf<ImprintingModel>()
 
-                    when(position){
+                    when (position) {
                         0 -> return
+                        1 -> return
+                        else -> {
+                            showToast("" + position)
+//                            set.add(
+//                                ImprintingModel(
+//
+//                                )
+
+
+                        }
+
                     }
                     for (i in 0..increasingImprintingArray.size) {
                         "증가 각인 position${position}: " + increasingImprintingArray[position].selectedItem.toString()
                             .log()
-                        "감소 각인 position${position} : ${scoreSpinnerArray[position].selectedItemId.toInt()}".log()
+                        "감소 각인 position${position} : ${upScoreSpinnerArray[position].selectedItemId.toInt()}".log()
 
                         setTestBtn.add(
                             ImprintingModel(
                                 text = increasingImprintingArray[position].selectedItem.toString(),
-                                score = scoreSpinnerArray[position].selectedItemId.toInt()
+                                score = upScoreSpinnerArray[position].selectedItemId.toInt()
                             )
                         )
 
@@ -217,7 +303,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         binding.gakinBookIncreasingSpinner2.adapter = getSpinnerAdapter(increasingArray)
 
 
-        scoreSpinnerArray.forEachIndexed { index, spinner ->
+        upScoreSpinnerArray.forEachIndexed { index, spinner ->
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     //TODO("Not yet implemented")
@@ -229,9 +315,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     position: Int,
                     id: Long
                 ) {
-                    "onItemSelected position : $position id: $id ${scoreSpinnerArray[index].selectedItem}".log()
+                    "onItemSelected position : $position id: $id ${upScoreSpinnerArray[index].selectedItem}".log()
                     val set = mutableSetOf<ImprintingModel>()
-                    for (i in 0..scoreSpinnerArray.size) {
+                    for (i in 0..upScoreSpinnerArray.size) {
                         set.add(
                             ImprintingModel(
 //                                text = itemSpinnerArray[i].selectedItem.toString(),
@@ -247,9 +333,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
             spinner.adapter = getSpinnerAdapter(accEffectNumberArray)
 
-            binding.abilityEffectNumberSpinner1.adapter = getSpinnerAdapter(stoneEffectNumberArray)
-            binding.abilityEffectNumberSpinner2.adapter = getSpinnerAdapter(stoneEffectNumberArray)
-            binding.abilityEffectNumberSpinner3.adapter = getSpinnerAdapter(stoneEffectNumberArray)
+            binding.abilityEffectNumberSpinner1.adapter =
+                getSpinnerAdapter(stoneEffectNumberArray)
+            binding.abilityEffectNumberSpinner2.adapter =
+                getSpinnerAdapter(stoneEffectNumberArray)
+            binding.abilityEffectNumberSpinner3.adapter =
+                getSpinnerAdapter(stoneEffectNumberArray)
 
             binding.gakinBookEffectNumberSpinner1.adapter =
                 getSpinnerAdapter(gakinBookEffectNumberArray)
