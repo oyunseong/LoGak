@@ -12,7 +12,7 @@
         <attr name="overCountText" format="reference|string" />
         <attr name="textColor" format="reference|integer" />
 
-        <attr name="blank1" format="reference|string" />
+        <attr name="blank1" format="reference|integer" />
         <attr name="blank2" format="reference|string" />
         <attr name="blank3" format="reference|string" />
         <attr name="blank4" format="reference|string" />

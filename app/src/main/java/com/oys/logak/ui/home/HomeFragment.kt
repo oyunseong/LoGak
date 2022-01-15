@@ -24,6 +24,7 @@ import com.oys.logak.extensions.log
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     val map = mutableMapOf<String, Int>()
 
+    // 커스텀뷰 어레이
     private val imprintingArray by lazy {
         arrayOf(
             binding.homeImprinting1,
@@ -39,7 +40,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             binding.homeIncreasingImprinting7,
         )
     }
-
 
     // 증가 감소 각인 어레이
     val itemSpinnerArray by lazy {
@@ -129,7 +129,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
          * 4. score 만큼 보석 박기
          * */
 
-        // MV
         // 모델의 값이 변경되었을 때 콜백이 불림
         homeViewModel.model.observe(viewLifecycleOwner, {
             "ui model observe $it".log()
@@ -245,9 +244,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 continue
             }
 
-            // 문제 1 : 원래 있던 key value 에서 value 만 바꿀 때
-
-            // key를 변경했을 때 value만 남아있는
             // 선택한 각인중에 이미 존재하는 각인이라면
             if (map.contains(key)) {
                 map[key] = value + map[key]!!
@@ -255,8 +251,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 map[key] = value
             }
         }
-        homeViewModel.setUiModel(map)
+
+//        map.toSortedMap()   // key를 기준으로 오름차순 정렬
+        homeViewModel.setUiModel(map.toSortedMap())
     }
+
 
     private fun getSpinnerAdapter(spinnerArray: Array<String>): ArrayAdapter<String> {
         return ArrayAdapter(

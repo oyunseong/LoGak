@@ -1,12 +1,16 @@
 package com.oys.logak
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.Canvas
+import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
+import androidx.annotation.DrawableRes
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import com.oys.logak.databinding.ViewImprintingBinding
 import com.oys.logak.ui.home.ImprintingModel
 
@@ -40,13 +44,13 @@ class ImprintingView : ConstraintLayout {
      * View Binding으로 레이아웃 파일 연결
      */
     private fun initView() {
-        Log.d("++ImprintingView","initView")
+        Log.d("++ImprintingView", "initView")
         binding = ViewImprintingBinding.inflate(LayoutInflater.from(context), this, true)
 
     }
 
     override fun onDraw(canvas: Canvas?) {
-        Log.d("++ImprintingView","showDraw")
+        Log.d("++ImprintingView", "showDraw")
         super.onDraw(canvas)
     }
 
@@ -54,21 +58,21 @@ class ImprintingView : ConstraintLayout {
      * attrs.xml에 선언해둔 attribute를 이용하여 이를 각각의 View에 설정해준다.
      */
     private fun getAttrs(attrs: AttributeSet) {
-        Log.d("++ImprintingView","getAttrs")    // 얘가 불림
+        Log.d("++ImprintingView", "getAttrs")    // 얘가 불림
         val typedArray =
             context.obtainStyledAttributes(attrs, R.styleable.ImprintingView)
         setTypedArray(typedArray)
     }
 
     private fun getAttrs(attrs: AttributeSet, defStyle: Int) {
-        Log.d("++ImprintingView","getAttrs2")
+        Log.d("++ImprintingView", "getAttrs2")
         val typedArray =
             context.obtainStyledAttributes(attrs, R.styleable.ImprintingView, defStyle, 0)
         setTypedArray(typedArray)
     }
 
     private fun setTypedArray(typedArray: TypedArray) {
-        Log.d("++ImprintingView","setTypedArray")
+        Log.d("++ImprintingView", "setTypedArray")
         val bgResId = typedArray.getResourceId(R.styleable.ImprintingView_bgColor, R.color.white)
         binding.imprintingBg.setBackgroundResource(bgResId)
 
@@ -110,9 +114,211 @@ class ImprintingView : ConstraintLayout {
     }
 
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     fun setImprintingModel(imprintingModel: ImprintingModel) {
-        binding.imprintingText.text = imprintingModel.text
-        binding.imprintingLevelText.text = imprintingModel.getLevel(imprintingModel.score)
-        binding.imprintingOverCountText.text = imprintingModel.overScore(imprintingModel.score)
+        val redColor = ContextCompat.getColor(context, R.color.red)
+        var resId = resources.getDrawable(R.drawable.blank)
+
+        //
+        binding.blank1.setImageDrawable(resId)
+        binding.blank1.setImageDrawable(resId)
+        binding.blank2.setImageDrawable(resId)
+        binding.blank3.setImageDrawable(resId)
+        binding.blank4.setImageDrawable(resId)
+        binding.blank5.setImageDrawable(resId)
+        binding.blank6.setImageDrawable(resId)
+        binding.blank7.setImageDrawable(resId)
+        binding.blank10.setImageDrawable(resId)
+        binding.blank11.setImageDrawable(resId)
+        binding.blank12.setImageDrawable(resId)
+        binding.blank13.setImageDrawable(resId)
+        binding.blank14.setImageDrawable(resId)
+        binding.blank15.setImageDrawable(resId)
+
+
+        if (imprintingModel.text == "공격력 감소" || imprintingModel.text == "공격속도 감소" || imprintingModel.text == "방어력 감소" || imprintingModel.text == "이동속도 감소") {
+            binding.imprintingText.setTextColor(redColor)
+            binding.imprintingText.text = imprintingModel.text
+            binding.imprintingLevelText.text = imprintingModel.getLevel(imprintingModel.score)
+            binding.imprintingOverCountText.text =
+                imprintingModel.overScore(imprintingModel.score)
+            resId = resources.getDrawable(R.drawable.minus)
+
+        } else {
+            binding.imprintingText.text = imprintingModel.text
+            binding.imprintingLevelText.text = imprintingModel.getLevel(imprintingModel.score)
+            binding.imprintingOverCountText.text =
+                imprintingModel.overScore(imprintingModel.score)
+            resId = resources.getDrawable(R.drawable.plus)
+        }
+
+        when (imprintingModel.score) {
+            0 -> {
+                resId = resources.getDrawable(R.drawable.blank)
+                binding.blank1.setImageDrawable(resId)
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+                binding.blank4.setImageDrawable(resId)
+                binding.blank5.setImageDrawable(resId)
+                binding.blank6.setImageDrawable(resId)
+                binding.blank7.setImageDrawable(resId)
+                binding.blank10.setImageDrawable(resId)
+                binding.blank11.setImageDrawable(resId)
+                binding.blank12.setImageDrawable(resId)
+                binding.blank13.setImageDrawable(resId)
+                binding.blank14.setImageDrawable(resId)
+                binding.blank15.setImageDrawable(resId)
+            }
+            1 -> {
+                binding.blank1.setImageDrawable(resId)
+            }
+            2 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+            }
+            3 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+            }
+            4 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+                binding.blank4.setImageDrawable(resId)
+            }
+            5 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+                binding.blank4.setImageDrawable(resId)
+                binding.blank5.setImageDrawable(resId)
+            }
+            6 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+                binding.blank4.setImageDrawable(resId)
+                binding.blank5.setImageDrawable(resId)
+                binding.blank6.setImageDrawable(resId)
+            }
+            7 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+                binding.blank4.setImageDrawable(resId)
+                binding.blank5.setImageDrawable(resId)
+                binding.blank6.setImageDrawable(resId)
+                binding.blank7.setImageDrawable(resId)
+            }
+            8 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+                binding.blank4.setImageDrawable(resId)
+                binding.blank5.setImageDrawable(resId)
+                binding.blank6.setImageDrawable(resId)
+                binding.blank7.setImageDrawable(resId)
+                binding.blank8.setImageDrawable(resId)
+            }
+            9 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+                binding.blank4.setImageDrawable(resId)
+                binding.blank5.setImageDrawable(resId)
+                binding.blank6.setImageDrawable(resId)
+                binding.blank7.setImageDrawable(resId)
+                binding.blank8.setImageDrawable(resId)
+                binding.blank9.setImageDrawable(resId)
+            }
+            10 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+                binding.blank4.setImageDrawable(resId)
+                binding.blank5.setImageDrawable(resId)
+                binding.blank6.setImageDrawable(resId)
+                binding.blank7.setImageDrawable(resId)
+                binding.blank8.setImageDrawable(resId)
+                binding.blank9.setImageDrawable(resId)
+                binding.blank10.setImageDrawable(resId)
+            }
+
+            11 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+                binding.blank4.setImageDrawable(resId)
+                binding.blank5.setImageDrawable(resId)
+                binding.blank6.setImageDrawable(resId)
+                binding.blank7.setImageDrawable(resId)
+                binding.blank8.setImageDrawable(resId)
+                binding.blank9.setImageDrawable(resId)
+                binding.blank10.setImageDrawable(resId)
+                binding.blank11.setImageDrawable(resId)
+            }
+
+            12 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+                binding.blank4.setImageDrawable(resId)
+                binding.blank5.setImageDrawable(resId)
+                binding.blank6.setImageDrawable(resId)
+                binding.blank7.setImageDrawable(resId)
+                binding.blank8.setImageDrawable(resId)
+                binding.blank9.setImageDrawable(resId)
+                binding.blank10.setImageDrawable(resId)
+                binding.blank11.setImageDrawable(resId)
+                binding.blank12.setImageDrawable(resId)
+            }
+
+            13 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+                binding.blank4.setImageDrawable(resId)
+                binding.blank5.setImageDrawable(resId)
+                binding.blank6.setImageDrawable(resId)
+                binding.blank7.setImageDrawable(resId)
+                binding.blank8.setImageDrawable(resId)
+                binding.blank9.setImageDrawable(resId)
+                binding.blank10.setImageDrawable(resId)
+                binding.blank11.setImageDrawable(resId)
+                binding.blank12.setImageDrawable(resId)
+                binding.blank13.setImageDrawable(resId)
+            }
+            14 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+                binding.blank4.setImageDrawable(resId)
+                binding.blank5.setImageDrawable(resId)
+                binding.blank6.setImageDrawable(resId)
+                binding.blank7.setImageDrawable(resId)
+                binding.blank10.setImageDrawable(resId)
+                binding.blank11.setImageDrawable(resId)
+                binding.blank12.setImageDrawable(resId)
+                binding.blank13.setImageDrawable(resId)
+                binding.blank14.setImageDrawable(resId)
+            }
+            15 -> {
+                binding.blank1.setImageDrawable(resId)
+                binding.blank2.setImageDrawable(resId)
+                binding.blank3.setImageDrawable(resId)
+                binding.blank4.setImageDrawable(resId)
+                binding.blank5.setImageDrawable(resId)
+                binding.blank6.setImageDrawable(resId)
+                binding.blank7.setImageDrawable(resId)
+                binding.blank10.setImageDrawable(resId)
+                binding.blank11.setImageDrawable(resId)
+                binding.blank12.setImageDrawable(resId)
+                binding.blank13.setImageDrawable(resId)
+                binding.blank14.setImageDrawable(resId)
+                binding.blank15.setImageDrawable(resId)
+            }
+        }
     }
 }
