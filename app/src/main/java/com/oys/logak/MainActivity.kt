@@ -14,11 +14,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-
-        navView.setupWithNavController(navController)
-
-
+        binding.navView.setupWithNavController(navController)
     }
 }
