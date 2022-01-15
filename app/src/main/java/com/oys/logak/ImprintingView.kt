@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.oys.logak.databinding.ViewImprintingBinding
+import com.oys.logak.ui.home.ImprintingModel
 
 
 class ImprintingView : ConstraintLayout {
@@ -109,13 +110,9 @@ class ImprintingView : ConstraintLayout {
     }
 
 
-    fun setText(text: String, levelText: String, overCountText: String) {
-        binding.imprintingText.text = text
-        binding.imprintingLevelText.text = levelText
-        binding.imprintingOverCountText.text = overCountText
-
-        Log.d("++ImprintingView", "setText: " + text)
-        Log.d("++ImprintingView", "setText: " + levelText)
-        Log.d("++ImprintingView", "setText: " + overCountText)
+    fun setImprintingModel(imprintingModel: ImprintingModel) {
+        binding.imprintingText.text = imprintingModel.text
+        binding.imprintingLevelText.text = imprintingModel.getLevel(imprintingModel.score)
+        binding.imprintingOverCountText.text = imprintingModel.overScore(imprintingModel.score)
     }
 }

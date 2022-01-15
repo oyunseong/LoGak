@@ -12,15 +12,17 @@ import com.oys.logak.R
 import com.oys.logak.base.BaseFragment
 import com.oys.logak.databinding.FragmentHomeBinding
 import com.oys.logak.extensions.log
-import com.oys.logak.ui.ImprintingModel
 
 /**
  * 1. 증가 각인 선택했을 때 각인 이름과 비어있는 보석 15개가 화면 상단에 보여짐
  * 2. 증가각인 최대 7개 설정 가능
- * 3.
+ * 3. 속성 추가 시 app 자체를 업데이트 해야하는 이슈가 있으므로 서버에 item array를 옮기는 것이 좋다
+ * 4. text가 한글로 하드코딩 되어있기 때문에 다른 언어를 지원할 때 수정해야하는 문제가 있다. ( 한글 -> 영어 번역 등등)
+ * 5. 선택할 때마다 map 객체를 계속 생성 중이라 메모리 누수 발생 가능성이 있음
  */
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+    val map = mutableMapOf<String, Int>()
 
     private val imprintingArray by lazy {
         arrayOf(
@@ -38,6 +40,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         )
     }
 
+
+    // 증가 감소 각인 어레이
     val itemSpinnerArray by lazy {
         arrayOf<Spinner>(
             binding.necklaceIncreasingSpinner1,
@@ -69,6 +73,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         )
     }
 
+    // 숫자 어레이
     val scoreSpinnerArray by lazy {
         arrayOf<Spinner>(
             binding.necklaceEffectNumberSpinner1,
@@ -117,11 +122,34 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
 
         setupSpinner()
+        /**
+         * 1. 각인 text / text 가 map 에 올라갔을 때 view visible
+         * 2. 각인 Level
+         * 3. 초과 score
+         * 4. score 만큼 보석 박기
+         * */
 
-        homeViewModel.imprintingModels.observe(viewLifecycleOwner, {
+        // MV
+        // 모델의 값이 변경되었을 때 콜백이 불림
+        homeViewModel.model.observe(viewLifecycleOwner, {
             "ui model observe $it".log()
+            var index: Int = 0
+
+            it.forEach {
+                imprintingArray[index].setImprintingModel(it)
+                imprintingArray[index].visibility = View.VISIBLE
+                index++
+            }
+            // 1. score 만큼 보석 박기
+            // 2. 감소, 증가 각인 text 색깔 구분
+            // 3. 감소각인은 위에 증가각인은 아래
+
+            for (i in index until imprintingArray.size) {
+                imprintingArray[i].visibility = View.GONE
+            }
         })
     }
+
 
     private fun setupSpinner() {
         val increasingArray = resources.getStringArray(R.array.increasing_imprinting)
@@ -130,10 +158,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         val stoneEffectNumberArray = resources.getStringArray(R.array.ability_effect_number)
         val gakinBookEffectNumberArray = resources.getStringArray(R.array.gakin_effect_number)
 
+        // 각인 선택
         itemSpinnerArray.forEachIndexed { index, spinner ->
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(p0: AdapterView<*>?) {
-                    //TODO("Not yet implemented")
                 }
 
                 override fun onItemSelected(
@@ -142,17 +170,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     position: Int,
                     id: Long
                 ) {
-//                    "onItemSelected position : $position id: $id ${numberSpinnerArray[index].selectedItem.toString().toInt()}".log()
-                    val set = mutableSetOf<ImprintingModel>()
-                    for (i in 0..scoreSpinnerArray.size) {
-                        set.add(
-                            ImprintingModel(
-                                text = itemSpinnerArray[i].selectedItem.toString(),
-                                score = scoreSpinnerArray[i].selectedItem.toString().toInt()
-                            )
-                        )
-                    }
-                    homeViewModel.setUiModel(set)
+                    getSelectedSpinnerItem()
                 }
             }
         }
@@ -185,6 +203,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         binding.gakinBookIncreasingSpinner2.adapter = getSpinnerAdapter(increasingArray)
 
 
+        // 스코어 스피너 부분
         scoreSpinnerArray.forEachIndexed { index, spinner ->
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -197,13 +216,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                     position: Int,
                     id: Long
                 ) {
-                    "onItemSelected position : $position id: $id ${scoreSpinnerArray[index].selectedItem}".log()
-                    homeViewModel.setUiModel(
-                        ImprintingModel(
-                            text = itemSpinnerArray[index].selectedItem.toString(),
-                            score = scoreSpinnerArray[index].selectedItem.toString().toInt()
-                        )
-                    )
+                    getSelectedSpinnerItem()
                 }
             }
 
@@ -213,10 +226,36 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             binding.abilityEffectNumberSpinner2.adapter = getSpinnerAdapter(stoneEffectNumberArray)
             binding.abilityEffectNumberSpinner3.adapter = getSpinnerAdapter(stoneEffectNumberArray)
 
-            binding.gakinBookEffectNumberSpinner1.adapter = getSpinnerAdapter(gakinBookEffectNumberArray)
-            binding.gakinBookEffectNumberSpinner2.adapter = getSpinnerAdapter(gakinBookEffectNumberArray)
+            binding.gakinBookEffectNumberSpinner1.adapter =
+                getSpinnerAdapter(gakinBookEffectNumberArray)
+            binding.gakinBookEffectNumberSpinner2.adapter =
+                getSpinnerAdapter(gakinBookEffectNumberArray)
         }
 
+    }
+    private fun getSelectedSpinnerItem(){
+        map.clear()
+
+        for (i in scoreSpinnerArray.indices) {
+            val key = itemSpinnerArray[i].selectedItem.toString()
+            val value = scoreSpinnerArray[i].selectedItem.toString().toInt()
+
+            // 증가각인 선택 시
+            if (key == "증가 각인 선택" || key == "---직업 각인---" || key == "---전투 각인---" || key == "감소 각인 선택") {
+                continue
+            }
+
+            // 문제 1 : 원래 있던 key value 에서 value 만 바꿀 때
+
+            // key를 변경했을 때 value만 남아있는
+            // 선택한 각인중에 이미 존재하는 각인이라면
+            if (map.contains(key)) {
+                map[key] = value + map[key]!!
+            } else {
+                map[key] = value
+            }
+        }
+        homeViewModel.setUiModel(map)
     }
 
     private fun getSpinnerAdapter(spinnerArray: Array<String>): ArrayAdapter<String> {
