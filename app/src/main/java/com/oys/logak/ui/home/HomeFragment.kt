@@ -152,6 +152,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun setupSpinner() {
         val increasingArray = resources.getStringArray(R.array.increasing_imprinting)
+        val battleImprintingArray = resources.getStringArray(R.array.battle_increasing_imprinting)
         val decreasingArray = resources.getStringArray(R.array.decreasing_imprinting)
         val accEffectNumberArray = resources.getStringArray(R.array.acc_effect_number)
         val stoneEffectNumberArray = resources.getStringArray(R.array.ability_effect_number)
@@ -194,8 +195,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         binding.ring2IncreasingSpinner2.adapter = getSpinnerAdapter(increasingArray)
         binding.ring2DecreasingSpinner.adapter = getSpinnerAdapter(decreasingArray)
 
-        binding.abilityIncreasingSpinner1.adapter = getSpinnerAdapter(increasingArray)
-        binding.abilityIncreasingSpinner2.adapter = getSpinnerAdapter(increasingArray)
+        binding.abilityIncreasingSpinner1.adapter = getSpinnerAdapter(battleImprintingArray)
+        binding.abilityIncreasingSpinner2.adapter = getSpinnerAdapter(battleImprintingArray)
         binding.abilityDecreasingSpinner.adapter = getSpinnerAdapter(decreasingArray)
 
         binding.gakinBookIncreasingSpinner1.adapter = getSpinnerAdapter(increasingArray)

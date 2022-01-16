@@ -92,6 +92,54 @@
         <item>탈출의 명수</item>
         <item>폭발물 전문가</item>
     </string-array>
+
+    <string-array name="battle_increasing_imprinting">
+        <item>증가 각인 선택</item>
+        <item>---전투 각인---</item>
+        <item>각성</item>
+        <item>강령술</item>
+        <item>강화 방패</item>
+        <item>결투의 대가</item>
+        <item>구슬동자</item>
+        <item>굳은 의지</item>
+        <item>급소 타격</item>
+        <item>기습의 대가</item>
+        <item>긴급구조</item>
+        <item>달인의 저력</item>
+        <item>돌격대장</item>
+        <item>마나 효율 증가</item>
+        <item>마나의 흐름</item>
+        <item>바리케이드</item>
+        <item>번개의 분노</item>
+        <item>부러진 뼈</item>
+        <item>분쇄의 주먹</item>
+        <item>불굴</item>
+        <item>선수필승</item>
+        <item>속전속결</item>
+        <item>슈퍼 차지</item>
+        <item>승부사</item>
+        <item>시선 집중</item>
+        <item>실드 관통</item>
+        <item>아드레날린</item>
+        <item>안정된 상태</item>
+        <item>약자 무시</item>
+        <item>에테르 포식자</item>
+        <item>여신의 가호</item>
+        <item>예리한 둔기</item>
+        <item>원한</item>
+        <item>위기 모면</item>
+        <item>저주받은 인형</item>
+        <item>전문의</item>
+        <item>정기 흡수</item>
+        <item>정밀 단도</item>
+        <item>중갑 착용</item>
+        <item>질량 증가</item>
+        <item>최대 마나 증가</item>
+        <item>추진력</item>
+        <item>타격의 대가</item>
+        <item>탈출의 명수</item>
+        <item>폭발물 전문가</item>
+    </string-array>
     
     <string-array name="decreasing_imprinting">
         <item>감소 각인 선택</item>

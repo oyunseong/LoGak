@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/imprinting_bg"
     android:layout_width="match_parent"
+    android:background="@drawable/bottom_line_838383_1dp"
     android:layout_height="wrap_content">
-
     <!-- 감소 각인 -->
     <TextView
         android:id="@+id/imprinting_text"
@@ -12,11 +12,13 @@
         android:layout_height="wrap_content"
         android:text="공격력 감소"
         android:textColor="#000000"
+        android:textStyle="bold"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:textStyle="bold"
         android:id="@+id/imprinting_level_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,6 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:textStyle="bold"
         android:id="@+id/imprinting_over_count_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
