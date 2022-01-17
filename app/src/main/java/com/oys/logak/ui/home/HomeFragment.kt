@@ -1,5 +1,6 @@
 package com.oys.logak.ui.home
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -158,6 +159,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         val stoneEffectNumberArray = resources.getStringArray(R.array.ability_effect_number)
         val gakinBookEffectNumberArray = resources.getStringArray(R.array.gakin_effect_number)
 
+
         // 각인 선택
         itemSpinnerArray.forEachIndexed { index, spinner ->
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -262,7 +264,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private fun getSpinnerAdapter(spinnerArray: Array<String>): ArrayAdapter<String> {
         return ArrayAdapter(
             requireContext(),
-            R.layout.support_simple_spinner_dropdown_item,
+            R.layout.item_spinner,
             spinnerArray
         )
     }

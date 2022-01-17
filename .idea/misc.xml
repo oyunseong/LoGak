@@ -8,24 +8,33 @@
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/drawable/bg_spinner.xml" value="0.17592592592592593" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/drawable/bottom_line_838383_1dp.xml" value="0.3723076923076923" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/drawable/bottom_line_dcdcdc_1dp.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/drawable/gradient_box.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.1" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.11388888888888889" />
-        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.21875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.21875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/drawable/right_line_838383_1dp.xml" value="0.21875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/drawable/round_color_20dp.xml" value="0.21875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/drawable/round_relics_color_20do.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/drawable/round_relics_color_20dp.xml" value="0.22" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/font/goundodumm.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/font/tway_air.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/layout/fragment_dashboard.xml" value="0.19635416666666666" />
-        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/layout/fragment_home.xml" value="0.19973279893119572" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/layout/fragment_notifications.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/layout/imprinting.xml" value="0.5" />
-        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/layout/view_imprinting.xml" value="0.5" />
-        <entry key="..\:/Users/gkrls/AndroidStudioProjects/LoGak/app/src/main/res/drawable/bg_spinner.xml" value="0.2520833333333333" />
-        <entry key="..\:/Users/gkrls/AndroidStudioProjects/LoGak/app/src/main/res/drawable/bottom_line_838383_1dp.xml" value="0.2520833333333333" />
-        <entry key="..\:/Users/gkrls/AndroidStudioProjects/LoGak/app/src/main/res/drawable/box_222.xml" value="0.2171875" />
-        <entry key="..\:/Users/gkrls/AndroidStudioProjects/LoGak/app/src/main/res/drawable/gradition_e.xml" value="0.2520833333333333" />
-        <entry key="..\:/Users/gkrls/AndroidStudioProjects/LoGak/app/src/main/res/drawable/right_line_838383_1dp.xml" value="0.2520833333333333" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/layout/item_spinner.xml" value="0.9" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/layout/view_imprinting.xml" value="0.25" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/menu/bottom_nav_menu.xml" value="0.5" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.20185185185185187" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/mipmap-anydpi-v26/ic_launcher_mococo.xml" value="0.21875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/LoGak/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.20185185185185187" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/LoGak/app/src/main/res/layout/activity_main.xml" value="0.2046875" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/LoGak/app/src/main/res/layout/activity_splash.xml" value="0.286231884057971" />
-        <entry key="..\:/Users/gkrls/AndroidStudioProjects/LoGak/app/src/main/res/layout/fragment_dashboard.xml" value="0.20104166666666667" />
-        <entry key="..\:/Users/gkrls/AndroidStudioProjects/LoGak/app/src/main/res/layout/fragment_home.xml" value="0.25716189207195206" />
-        <entry key="..\:/Users/gkrls/AndroidStudioProjects/LoGak/app/src/main/res/layout/fragment_notifications.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/gkrls/AndroidStudioProjects/LoGak/app/src/main/res/layout/fragment_home.xml" value="0.2046875" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/LoGak/app/src/main/res/layout/view_imprinting.xml" value="0.286231884057971" />
         <entry key="..\:/Users/gkrls/AndroidStudioProjects/LoGak/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20625" />
       </map>

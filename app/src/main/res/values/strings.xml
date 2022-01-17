@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">LoGak</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">홈</string>
+    <string name="imprinting">각인</string>
+    <string name="ability_stone">돌깎기</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="decrease_in_attack_power">공격력 감소</string>

@@ -15,6 +15,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
         super.onCreate(savedInstanceState)
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        binding.navView.setupWithNavController(navController)
+//        binding.navView.setupWithNavController(navController)
     }
 }
