@@ -233,7 +233,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
 
     }
-    private fun getSelectedSpinnerItem(){
+
+    private fun getSelectedSpinnerItem() {
         map.clear()
 
         for (i in scoreSpinnerArray.indices) {

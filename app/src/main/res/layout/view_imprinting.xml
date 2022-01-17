@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/imprinting_bg"
     android:layout_width="match_parent"
-    android:background="@drawable/bottom_line_838383_1dp"
+    android:background="@color/background_color"
     android:layout_height="wrap_content">
     <!-- 감소 각인 -->
     <TextView

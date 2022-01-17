@@ -72,7 +72,7 @@ class ImprintingView : ConstraintLayout {
 
     private fun setTypedArray(typedArray: TypedArray) {
         Log.d("++ImprintingView", "setTypedArray")
-        val bgResId = typedArray.getResourceId(R.styleable.ImprintingView_bgColor, R.color.white)
+        val bgResId = typedArray.getResourceId(R.styleable.ImprintingView_bgColor, R.color.background_color)
         binding.imprintingBg.setBackgroundResource(bgResId)
 
         val symbolResId =
@@ -114,7 +114,7 @@ class ImprintingView : ConstraintLayout {
 
 
     /**
-     * 1. resId, blankId변수가 같은 drawable 파일을 사용중
+     *
      *
      * */
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -137,7 +137,7 @@ class ImprintingView : ConstraintLayout {
                 imprintingModel.overScore(imprintingModel.score)
             resId = resources.getDrawable(R.drawable.minus)
         } else {
-            textColor = ContextCompat.getColor(context, R.color.blue)
+            textColor = ContextCompat.getColor(context, R.color.white)
 
             binding.imprintingText.setTextColor(textColor)
             binding.imprintingLevelText.setTextColor(textColor)
