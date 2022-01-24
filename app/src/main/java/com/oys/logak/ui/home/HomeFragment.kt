@@ -39,6 +39,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             binding.homeIncreasingImprinting5,
             binding.homeIncreasingImprinting6,
             binding.homeIncreasingImprinting7,
+            binding.homeIncreasingImprinting8,
+            binding.homeIncreasingImprinting9,
+            binding.homeIncreasingImprinting10,
+            binding.homeIncreasingImprinting11,
+            binding.homeIncreasingImprinting12,
+            binding.homeIncreasingImprinting13,
+            binding.homeIncreasingImprinting14,
         )
     }
 
@@ -254,13 +261,35 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             } else {
                 map[key] = value
             }
+            /**
+             * map을 순회하면서 상단에 올릴 각인이 있는지 찾고 넣기
+             * */
+
+            map.forEach { (key, score) ->
+                key == "증가 각인 선택"
+            }
+
+
+
+            val textMap = map.toSortedMap()
+            val linkedHashMap = LinkedHashMap<String,Int>()
+
+
+            if(key == "공격력 감소"){
+                textMap.mapKeys {
+
+                }
+            }
         }
 
 //        map.toSortedMap()   // key를 기준으로 오름차순 정렬
 
+
+
         homeViewModel.setUiModel(map.toSortedMap())
     }
 
+    // map에 담겨있는 데이터 중에 특정 key값을
 
     private fun getSpinnerAdapter(spinnerArray: Array<String>): ArrayAdapter<String> {
         return ArrayAdapter(

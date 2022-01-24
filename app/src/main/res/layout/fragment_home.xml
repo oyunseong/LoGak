@@ -144,6 +144,90 @@
             app:text="이동속도 감소"
             app:textColor="@color/black" />
 
+        <com.oys.logak.ImprintingView
+            android:id="@+id/home_increasing_imprinting8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_increasing_imprinting7"
+            app:levelText="Lv. 1"
+            app:overCountText="+1"
+            app:text="이동속도 감소"
+            app:textColor="@color/black" />
+
+        <com.oys.logak.ImprintingView
+            android:id="@+id/home_increasing_imprinting9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_increasing_imprinting8"
+            app:levelText="Lv. 1"
+            app:overCountText="+1"
+            app:text="이동속도 감소"
+            app:textColor="@color/black" />
+
+        <com.oys.logak.ImprintingView
+            android:id="@+id/home_increasing_imprinting10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_increasing_imprinting9"
+            app:levelText="Lv. 1"
+            app:overCountText="+1"
+            app:text="이동속도 감소"
+            app:textColor="@color/black" />
+
+        <com.oys.logak.ImprintingView
+            android:id="@+id/home_increasing_imprinting11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_increasing_imprinting10"
+            app:levelText="Lv. 1"
+            app:overCountText="+1"
+            app:text="이동속도 감소"
+            app:textColor="@color/black" />
+
+        <com.oys.logak.ImprintingView
+            android:id="@+id/home_increasing_imprinting12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_increasing_imprinting11"
+            app:levelText="Lv. 1"
+            app:overCountText="+1"
+            app:text="이동속도 감소"
+            app:textColor="@color/black" />
+
+        <com.oys.logak.ImprintingView
+            android:id="@+id/home_increasing_imprinting13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_increasing_imprinting12"
+            app:levelText="Lv. 1"
+            app:overCountText="+1"
+            app:text="이동속도 감소"
+            app:textColor="@color/black" />
+
+        <com.oys.logak.ImprintingView
+            android:id="@+id/home_increasing_imprinting14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_increasing_imprinting13"
+            app:levelText="Lv. 1"
+            app:overCountText="+1"
+            app:text="이동속도 감소"
+            app:textColor="@color/black" />
+
         <!-- 목걸이 -->
         <TextView
             android:layout_width="80dp"
@@ -162,21 +246,20 @@
             android:layout_marginTop="40dp"
             android:src="@drawable/acc_neck2"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_increasing_imprinting7" />
+            app:layout_constraintTop_toBottomOf="@id/home_increasing_imprinting14" />
 
         <Spinner
-            android:fontFamily="@font/tway_air_font"
             android:id="@+id/necklace_increasing_spinner1"
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-
+            android:fontFamily="@font/tway_air_font"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toRightOf="@id/acc_necklace"
             app:layout_constraintRight_toLeftOf="@id/necklace_effect_number_spinner1"
-            app:layout_constraintTop_toBottomOf="@id/home_increasing_imprinting7" />
+            app:layout_constraintTop_toBottomOf="@id/home_increasing_imprinting14" />
 
         <Spinner
             android:id="@+id/necklace_effect_number_spinner1"
@@ -425,7 +508,7 @@
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toRightOf="@id/acc_ring1"
             app:layout_constraintRight_toLeftOf="@id/ring1_effect_number_spinner1"
-            app:layout_constraintTop_toBottomOf="@id/earring2_decreasing_spinner"/>
+            app:layout_constraintTop_toBottomOf="@id/earring2_decreasing_spinner" />
 
         <Spinner
             android:id="@+id/ring1_effect_number_spinner1"
@@ -575,8 +658,8 @@
             android:id="@+id/ability_stone"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginTop="40dp"
             android:layout_marginStart="25dp"
+            android:layout_marginTop="40dp"
             android:src="@drawable/ability_stone"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ring2_decreasing_spinner" />
@@ -658,8 +741,8 @@
             android:id="@+id/gakin_book"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginTop="40dp"
             android:layout_marginStart="25dp"
+            android:layout_marginTop="40dp"
             android:src="@drawable/gakin_book"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ability_decreasing_spinner" />
