@@ -6,5 +6,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="decrease_in_attack_power">공격력 감소</string>
+    <string name="image_loading">이미지를 불러오고 있습니다</string>
 
 </resources>

@@ -242,10 +242,13 @@
             android:id="@+id/acc_necklace"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginStart="25dp"
             android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:contentDescription="@string/image_loading"
             android:src="@drawable/acc_neck2"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/necklace_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/home_increasing_imprinting14" />
 
         <Spinner
@@ -256,7 +259,6 @@
             android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
             android:fontFamily="@font/tway_air_font"
-            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toRightOf="@id/acc_necklace"
             app:layout_constraintRight_toLeftOf="@id/necklace_effect_number_spinner1"
             app:layout_constraintTop_toBottomOf="@id/home_increasing_imprinting14" />
@@ -265,6 +267,7 @@
             android:id="@+id/necklace_effect_number_spinner1"
             android:layout_width="50dp"
             android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
             app:layout_constraintLeft_toRightOf="@id/necklace_increasing_spinner1"
             app:layout_constraintRight_toRightOf="parent"
@@ -275,11 +278,9 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toRightOf="@id/acc_necklace"
-            app:layout_constraintRight_toLeftOf="@id/necklace_effect_number_spinner2"
+            app:layout_constraintLeft_toLeftOf="@id/necklace_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="@id/necklace_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/necklace_increasing_spinner1" />
 
         <Spinner
@@ -287,8 +288,8 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintLeft_toRightOf="@id/necklace_increasing_spinner2"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/necklace_effect_number_spinner1"
+            app:layout_constraintRight_toRightOf="@id/necklace_effect_number_spinner1"
             app:layout_constraintTop_toTopOf="@id/necklace_increasing_spinner2" />
 
         <Spinner
@@ -296,11 +297,9 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toRightOf="@id/acc_necklace"
-            app:layout_constraintRight_toLeftOf="@id/necklace_effect_number_spinner3"
+            app:layout_constraintLeft_toLeftOf="@id/necklace_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="@id/necklace_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/necklace_increasing_spinner2" />
 
         <Spinner
@@ -308,8 +307,8 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintLeft_toRightOf="@id/necklace_decreasing_spinner"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/necklace_effect_number_spinner1"
+            app:layout_constraintRight_toRightOf="@id/necklace_effect_number_spinner1"
             app:layout_constraintTop_toTopOf="@id/necklace_decreasing_spinner" />
 
         <!-- 귀걸이1 -->
@@ -326,10 +325,13 @@
             android:id="@+id/acc_earring"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginStart="25dp"
             android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:contentDescription="@string/image_loading"
             android:src="@drawable/acc_earring3"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/earring_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/necklace_decreasing_spinner" />
 
         <Spinner
@@ -348,6 +350,7 @@
             android:id="@+id/earring_effect_number_spinner1"
             android:layout_width="50dp"
             android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
             app:layout_constraintLeft_toRightOf="@id/earring_increasing_spinner1"
             app:layout_constraintRight_toRightOf="parent"
@@ -358,11 +361,9 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toRightOf="@id/acc_earring"
-            app:layout_constraintRight_toLeftOf="@id/earring_effect_number_spinner2"
+            app:layout_constraintLeft_toLeftOf="@id/earring_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="@id/earring_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/earring_increasing_spinner1" />
 
         <Spinner
@@ -370,8 +371,8 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintLeft_toRightOf="@id/earring_increasing_spinner2"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/earring_effect_number_spinner1"
+            app:layout_constraintRight_toRightOf="@id/earring_effect_number_spinner1"
             app:layout_constraintTop_toTopOf="@id/earring_increasing_spinner2" />
 
         <Spinner
@@ -379,11 +380,9 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toRightOf="@id/acc_earring"
-            app:layout_constraintRight_toLeftOf="@id/earring_effect_number_spinner3"
+            app:layout_constraintLeft_toLeftOf="@id/earring_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="@id/earring_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/earring_increasing_spinner2" />
 
         <Spinner
@@ -391,8 +390,8 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintLeft_toRightOf="@id/earring_decreasing_spinner"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/earring_effect_number_spinner1"
+            app:layout_constraintRight_toRightOf="@id/earring_effect_number_spinner1"
             app:layout_constraintTop_toTopOf="@id/earring_decreasing_spinner" />
 
         <!-- 귀걸이2 -->
@@ -409,10 +408,13 @@
             android:id="@+id/acc_earring2"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginStart="25dp"
             android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:contentDescription="@string/image_loading"
             android:src="@drawable/acc_earring2"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/earring2_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/earring_decreasing_spinner" />
 
         <Spinner
@@ -422,7 +424,6 @@
             android:layout_marginTop="22dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toRightOf="@id/acc_earring2"
             app:layout_constraintRight_toLeftOf="@id/earring2_effect_number_spinner1"
             app:layout_constraintTop_toBottomOf="@id/earring_decreasing_spinner" />
@@ -431,6 +432,7 @@
             android:id="@+id/earring2_effect_number_spinner1"
             android:layout_width="50dp"
             android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
             app:layout_constraintLeft_toRightOf="@id/earring2_increasing_spinner1"
             app:layout_constraintRight_toRightOf="parent"
@@ -441,11 +443,9 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toRightOf="@id/acc_earring2"
-            app:layout_constraintRight_toLeftOf="@id/earring2_effect_number_spinner2"
+            app:layout_constraintLeft_toLeftOf="@id/earring2_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="@id/earring2_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/earring2_increasing_spinner1" />
 
         <Spinner
@@ -453,8 +453,8 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintLeft_toRightOf="@id/earring2_increasing_spinner2"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/earring2_effect_number_spinner1"
+            app:layout_constraintRight_toRightOf="@id/earring2_effect_number_spinner1"
             app:layout_constraintTop_toTopOf="@id/earring2_increasing_spinner2" />
 
         <Spinner
@@ -462,11 +462,9 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toRightOf="@id/acc_earring2"
-            app:layout_constraintRight_toLeftOf="@id/earring2_effect_number_spinner3"
+            app:layout_constraintLeft_toLeftOf="@id/earring2_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="@id/earring2_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/earring2_increasing_spinner2" />
 
         <Spinner
@@ -474,8 +472,8 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintLeft_toRightOf="@id/earring2_decreasing_spinner"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/earring2_effect_number_spinner1"
+            app:layout_constraintRight_toRightOf="@id/earring2_effect_number_spinner1"
             app:layout_constraintTop_toTopOf="@id/earring2_decreasing_spinner" />
 
         <!-- 반지1 -->
@@ -492,10 +490,13 @@
             android:id="@+id/acc_ring1"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginStart="25dp"
             android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:contentDescription="@string/image_loading"
             android:src="@drawable/acc_ring3"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/ring1_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/earring2_decreasing_spinner" />
 
         <Spinner
@@ -505,7 +506,6 @@
             android:layout_marginTop="22dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toRightOf="@id/acc_ring1"
             app:layout_constraintRight_toLeftOf="@id/ring1_effect_number_spinner1"
             app:layout_constraintTop_toBottomOf="@id/earring2_decreasing_spinner" />
@@ -514,6 +514,7 @@
             android:id="@+id/ring1_effect_number_spinner1"
             android:layout_width="50dp"
             android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
             app:layout_constraintLeft_toRightOf="@id/ring1_increasing_spinner1"
             app:layout_constraintRight_toRightOf="parent"
@@ -524,11 +525,10 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toRightOf="@id/acc_ring1"
-            app:layout_constraintRight_toLeftOf="@id/ring1_effect_number_spinner2"
+            app:layout_constraintLeft_toLeftOf="@id/ring1_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="@id/ring1_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/ring1_increasing_spinner1" />
 
         <Spinner
@@ -536,8 +536,8 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintLeft_toRightOf="@id/ring1_increasing_spinner2"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/ring1_effect_number_spinner1"
+            app:layout_constraintRight_toRightOf="@id/ring1_effect_number_spinner1"
             app:layout_constraintTop_toTopOf="@id/ring1_increasing_spinner2" />
 
         <Spinner
@@ -545,11 +545,9 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toRightOf="@id/acc_ring1"
-            app:layout_constraintRight_toLeftOf="@id/ring1_effect_number_spinner3"
+            app:layout_constraintLeft_toLeftOf="@id/ring1_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="@id/ring1_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/ring1_increasing_spinner2" />
 
         <Spinner
@@ -557,8 +555,8 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintLeft_toRightOf="@id/ring1_decreasing_spinner"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/ring1_effect_number_spinner1"
+            app:layout_constraintRight_toRightOf="@id/ring1_effect_number_spinner1"
             app:layout_constraintTop_toTopOf="@id/ring1_decreasing_spinner" />
 
         <!-- 반지2 -->
@@ -575,10 +573,13 @@
             android:id="@+id/acc_ring2"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginStart="25dp"
             android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:contentDescription="@string/image_loading"
             android:src="@drawable/acc_ring2"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/ring2_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/ring1_decreasing_spinner" />
 
         <Spinner
@@ -588,7 +589,6 @@
             android:layout_marginTop="22dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toRightOf="@id/acc_ring2"
             app:layout_constraintRight_toLeftOf="@id/ring2_effect_number_spinner1"
             app:layout_constraintTop_toBottomOf="@id/ring1_decreasing_spinner" />
@@ -597,6 +597,7 @@
             android:id="@+id/ring2_effect_number_spinner1"
             android:layout_width="50dp"
             android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
             app:layout_constraintLeft_toRightOf="@id/ring2_increasing_spinner1"
             app:layout_constraintRight_toRightOf="parent"
@@ -607,11 +608,9 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toRightOf="@id/acc_ring2"
-            app:layout_constraintRight_toLeftOf="@id/ring2_effect_number_spinner2"
+            app:layout_constraintLeft_toLeftOf="@id/ring2_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="@id/ring2_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/ring2_increasing_spinner1" />
 
         <Spinner
@@ -619,8 +618,8 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintLeft_toRightOf="@id/ring2_increasing_spinner2"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/ring2_effect_number_spinner1"
+            app:layout_constraintRight_toRightOf="@id/ring2_effect_number_spinner1"
             app:layout_constraintTop_toTopOf="@id/ring2_increasing_spinner2" />
 
         <Spinner
@@ -628,11 +627,9 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toRightOf="@id/acc_ring2"
-            app:layout_constraintRight_toLeftOf="@id/ring2_effect_number_spinner3"
+            app:layout_constraintLeft_toLeftOf="@id/ring2_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="@id/ring2_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/ring2_increasing_spinner2" />
 
         <Spinner
@@ -640,8 +637,8 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintLeft_toRightOf="@id/ring2_decreasing_spinner"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/ring2_effect_number_spinner1"
+            app:layout_constraintRight_toRightOf="@id/ring2_effect_number_spinner1"
             app:layout_constraintTop_toTopOf="@id/ring2_decreasing_spinner" />
 
         <!-- 어빌리티 스톤 -->
@@ -658,10 +655,13 @@
             android:id="@+id/ability_stone"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginStart="25dp"
             android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:contentDescription="@string/image_loading"
             android:src="@drawable/ability_stone"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/ability_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/ring2_decreasing_spinner" />
 
         <Spinner
@@ -671,7 +671,6 @@
             android:layout_marginTop="22dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toRightOf="@id/ability_stone"
             app:layout_constraintRight_toLeftOf="@id/ability_effect_number_spinner1"
             app:layout_constraintTop_toBottomOf="@id/ring2_decreasing_spinner" />
@@ -680,6 +679,7 @@
             android:id="@+id/ability_effect_number_spinner1"
             android:layout_width="50dp"
             android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
             app:layout_constraintLeft_toRightOf="@id/ability_increasing_spinner1"
             app:layout_constraintRight_toRightOf="parent"
@@ -690,11 +690,9 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toRightOf="@id/ability_stone"
-            app:layout_constraintRight_toLeftOf="@id/ability_effect_number_spinner2"
+            app:layout_constraintLeft_toLeftOf="@id/ability_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="@id/ability_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/ability_increasing_spinner1" />
 
         <Spinner
@@ -702,8 +700,8 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintLeft_toRightOf="@id/ability_increasing_spinner2"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/ability_effect_number_spinner1"
+            app:layout_constraintRight_toRightOf="@id/ability_effect_number_spinner1"
             app:layout_constraintTop_toTopOf="@id/ability_increasing_spinner2" />
 
         <Spinner
@@ -711,11 +709,9 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toRightOf="@id/ability_stone"
-            app:layout_constraintRight_toLeftOf="@id/ability_effect_number_spinner3"
+            app:layout_constraintLeft_toLeftOf="@id/ability_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="@id/ability_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/ability_increasing_spinner2" />
 
         <Spinner
@@ -723,8 +719,8 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintLeft_toRightOf="@id/ability_decreasing_spinner"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/ability_effect_number_spinner1"
+            app:layout_constraintRight_toRightOf="@id/ability_effect_number_spinner1"
             app:layout_constraintTop_toTopOf="@id/ability_decreasing_spinner" />
 
         <!-- 각인서 -->
@@ -741,10 +737,13 @@
             android:id="@+id/gakin_book"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginStart="25dp"
             android:layout_marginTop="40dp"
+            android:layout_marginEnd="30dp"
+            android:contentDescription="@string/image_loading"
             android:src="@drawable/gakin_book"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/gakin_book_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/ability_decreasing_spinner" />
 
         <Spinner
@@ -754,7 +753,6 @@
             android:layout_marginTop="39dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toRightOf="@id/gakin_book"
             app:layout_constraintRight_toLeftOf="@id/gakin_book_effect_number_spinner1"
             app:layout_constraintTop_toBottomOf="@+id/ability_decreasing_spinner" />
@@ -763,6 +761,7 @@
             android:id="@+id/gakin_book_effect_number_spinner1"
             android:layout_width="50dp"
             android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner"
             app:layout_constraintLeft_toRightOf="@id/gakin_book_increasing_spinner1"
             app:layout_constraintRight_toRightOf="parent"
@@ -773,11 +772,10 @@
             android:layout_width="180dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
+
             android:background="@drawable/bg_spinner"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintLeft_toRightOf="@id/gakin_book"
-            app:layout_constraintRight_toLeftOf="@id/gakin_book_effect_number_spinner2"
+            app:layout_constraintLeft_toLeftOf="@id/gakin_book_increasing_spinner1"
+            app:layout_constraintRight_toRightOf="@id/gakin_book_increasing_spinner1"
             app:layout_constraintTop_toBottomOf="@id/gakin_book_increasing_spinner1" />
 
         <Spinner
@@ -785,8 +783,8 @@
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:background="@drawable/bg_spinner"
-            app:layout_constraintLeft_toRightOf="@id/gakin_book_increasing_spinner2"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/gakin_book_effect_number_spinner1"
+            app:layout_constraintRight_toRightOf="@id/gakin_book_effect_number_spinner1"
             app:layout_constraintTop_toTopOf="@id/gakin_book_increasing_spinner2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
