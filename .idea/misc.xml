@@ -3,11 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.30052083333333335" />
         <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/drawable/bg_spinner.xml" value="0.3723076923076923" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/drawable/bottom_line_838383_1dp.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/drawable/gradient_box.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/drawable/ic_home_white_24dp.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/drawable/ic_launcher_background.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/drawable/right_line_838383_1dp.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/drawable/round_ancient_color_20dp.xml" value="0.30052083333333335" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/drawable/round_relics_color_20dp.xml" value="0.30052083333333335" />
         <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/layout/activity_main.xml" value="0.1286231884057971" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/layout/activity_splash.xml" value="0.24322916666666666" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/layout/fragment_dashboard.xml" value="0.24322916666666666" />
         <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/layout/fragment_home.xml" value="0.21" />
         <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/layout/fragment_notifications.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/layout/item_spinner.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/layout/view_imprinting.xml" value="0.24322916666666666" />
+        <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24322916666666666" />
         <entry key="..\:/Users/gkrls/StudioProjects/LoGak/app/src/main/res/mipmap-anydpi-v26/ic_lostark_logo.xml" value="0.38229166666666664" />
       </map>
     </option>

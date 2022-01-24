@@ -1,13 +1,11 @@
 package com.oys.logak.ui.home
 
-import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import androidx.fragment.app.viewModels
 import com.oys.logak.R
 import com.oys.logak.base.BaseFragment
@@ -17,13 +15,13 @@ import com.oys.logak.extensions.log
 /**
  * 1. 증가 각인 선택했을 때 각인 이름과 비어있는 보석 15개가 화면 상단에 보여짐
  * 2. 증가각인 최대 7개 설정 가능
- * 3. 속성 추가 시 app 자체를 업데이트 해야하는 이슈가 있으므로 서버에 item array를 옮기는 것이 좋다
- * 4. text가 한글로 하드코딩 되어있기 때문에 다른 언어를 지원할 때 수정해야하는 문제가 있다. ( 한글 -> 영어 번역 등등)
+ * 3. 속성 추가 시 app 자체를 업데이트 해야하는 이슈가 있으므로 서버에 item array 를 옮기는 것이 좋다
+ * 4. text 가 한글로 하드코딩 되어있기 때문에 다른 언어를 지원할 때 수정해야하는 문제가 있다. ( 한글 -> 영어 번역 등등)
  * 5. 선택할 때마다 map 객체를 계속 생성 중이라 메모리 누수 발생 가능성이 있음
  */
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
-    val map = mutableMapOf<String, Int>()
+    private val map = mutableMapOf<String, Int>()
 
     // 커스텀뷰 어레이
     private val imprintingArray by lazy {
@@ -50,8 +48,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     // 증가 감소 각인 어레이
-    val itemSpinnerArray by lazy {
-        arrayOf<Spinner>(
+    private val itemSpinnerArray by lazy {
+        arrayOf(
             binding.necklaceIncreasingSpinner1,
             binding.necklaceIncreasingSpinner2,
             binding.necklaceDecreasingSpinner,
@@ -82,8 +80,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     // 숫자 어레이
-    val scoreSpinnerArray by lazy {
-        arrayOf<Spinner>(
+    private val scoreSpinnerArray by lazy {
+        arrayOf(
             binding.necklaceEffectNumberSpinner1,
             binding.necklaceEffectNumberSpinner2,
             binding.necklaceEffectNumberSpinner3,
@@ -113,7 +111,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         )
     }
 
-    val homeViewModel: HomeViewModel by viewModels<HomeViewModel>()
+    private val homeViewModel: HomeViewModel by viewModels()
 
     override fun getFragmentBinding(
         inflater: LayoutInflater,
@@ -140,7 +138,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         // 모델의 값이 변경되었을 때 콜백이 불림
         homeViewModel.model.observe(viewLifecycleOwner, {
             "ui model observe $it".log()
-            var index: Int = 0
+            var index = 0
 
             it.forEach {
                 imprintingArray[index].setImprintingModel(it)
@@ -168,7 +166,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
 
         // 각인 선택
-        itemSpinnerArray.forEachIndexed { index, spinner ->
+        itemSpinnerArray.forEachIndexed { _, spinner ->
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                 }
@@ -213,7 +211,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
 
         // 스코어 스피너 부분
-        scoreSpinnerArray.forEachIndexed { index, spinner ->
+        scoreSpinnerArray.forEachIndexed { _, spinner ->
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     //TODO("Not yet implemented")
@@ -250,46 +248,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             val key = itemSpinnerArray[i].selectedItem.toString()
             val value = scoreSpinnerArray[i].selectedItem.toString().toInt()
 
-            // 증가각인 선택 시
             if (key == "증가 각인 선택" || key == "---직업 각인---" || key == "---전투 각인---" || key == "감소 각인 선택") {
                 continue
             }
 
-            // 선택한 각인중에 이미 존재하는 각인이라면
             if (map.contains(key)) {
                 map[key] = value + map[key]!!
             } else {
                 map[key] = value
             }
-            /**
-             * map을 순회하면서 상단에 올릴 각인이 있는지 찾고 넣기
-             * */
 
-            map.forEach { (key, score) ->
-                key == "증가 각인 선택"
-            }
-
-
-
-            val textMap = map.toSortedMap()
-            val linkedHashMap = LinkedHashMap<String,Int>()
-
-
-            if(key == "공격력 감소"){
-                textMap.mapKeys {
-
-                }
-            }
+            homeViewModel.setUiModel(map.toSortedMap())
         }
-
-//        map.toSortedMap()   // key를 기준으로 오름차순 정렬
-
-
-
-        homeViewModel.setUiModel(map.toSortedMap())
     }
-
-    // map에 담겨있는 데이터 중에 특정 key값을
 
     private fun getSpinnerAdapter(spinnerArray: Array<String>): ArrayAdapter<String> {
         return ArrayAdapter(

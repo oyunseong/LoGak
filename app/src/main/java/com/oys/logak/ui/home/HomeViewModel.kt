@@ -13,7 +13,7 @@ class HomeViewModel : ViewModel() {
         val list = mutableListOf<ImprintingModel>()
 
 
-        // TODO 검색 : kotlin stream 함수
+        // 검색 : kotlin stream 함수
         // 멀티스레드에서 좋음
 //        list.filter {
 //            it.text == "각인"
