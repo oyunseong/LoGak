@@ -12,14 +12,17 @@
         style="@style/imprinting_white_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="장신구"
+        android:text="액세서리"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <Spinner-->
-<!--        app:layout_constraintLeft_toRightOf="@id/acc_tv"-->
-<!--        android:id="@+id/first_spinner"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="20dp"/>-->
+    <Spinner
+        android:id="@+id/first_spinner"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:background="@drawable/bg_spinner"
+        android:fontFamily="@font/tway_air_font"
+        app:layout_constraintLeft_toRightOf="@id/acc_tv"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
