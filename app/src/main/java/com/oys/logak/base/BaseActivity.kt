@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BaseActivity<B: ViewBinding>(val bindingFactory: (LayoutInflater) -> B): AppCompatActivity(){
     private var _binding: B? =null
-    private val binding get() = _binding!!
+    val binding get() = _binding!!
 
     private val tag: String = this::class.java.name
 

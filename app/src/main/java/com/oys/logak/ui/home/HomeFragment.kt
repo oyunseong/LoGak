@@ -128,6 +128,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
 
         setupSpinner()
+
+
         /**
          * 1. 각인 text / text 가 map 에 올라갔을 때 view visible
          * 2. 각인 Level
@@ -163,7 +165,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         val accEffectNumberArray = resources.getStringArray(R.array.acc_effect_number)
         val stoneEffectNumberArray = resources.getStringArray(R.array.ability_effect_number)
         val gakinBookEffectNumberArray = resources.getStringArray(R.array.gakin_effect_number)
-
 
         // 각인 선택
         itemSpinnerArray.forEachIndexed { _, spinner ->

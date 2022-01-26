@@ -254,7 +254,7 @@
 
         <Spinner
             android:id="@+id/necklace_increasing_spinner1"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
@@ -276,7 +276,7 @@
 
         <Spinner
             android:id="@+id/necklace_increasing_spinner2"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/bg_spinner"
@@ -295,7 +295,7 @@
 
         <Spinner
             android:id="@+id/necklace_decreasing_spinner"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/bg_spinner"
@@ -338,7 +338,7 @@
 
         <Spinner
             android:id="@+id/earring_increasing_spinner1"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="22dp"
             android:layout_marginEnd="10dp"
@@ -360,7 +360,7 @@
 
         <Spinner
             android:id="@+id/earring_increasing_spinner2"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/bg_spinner"
@@ -379,7 +379,7 @@
 
         <Spinner
             android:id="@+id/earring_decreasing_spinner"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/bg_spinner"
@@ -422,7 +422,7 @@
 
         <Spinner
             android:id="@+id/earring2_increasing_spinner1"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="22dp"
             android:layout_marginEnd="10dp"
@@ -443,7 +443,7 @@
 
         <Spinner
             android:id="@+id/earring2_increasing_spinner2"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/bg_spinner"
@@ -462,7 +462,7 @@
 
         <Spinner
             android:id="@+id/earring2_decreasing_spinner"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/bg_spinner"
@@ -505,7 +505,7 @@
 
         <Spinner
             android:id="@+id/ring1_increasing_spinner1"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="22dp"
             android:layout_marginEnd="10dp"
@@ -526,7 +526,7 @@
 
         <Spinner
             android:id="@+id/ring1_increasing_spinner2"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/bg_spinner"
@@ -546,7 +546,7 @@
 
         <Spinner
             android:id="@+id/ring1_decreasing_spinner"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/bg_spinner"
@@ -589,7 +589,7 @@
 
         <Spinner
             android:id="@+id/ring2_increasing_spinner1"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="22dp"
             android:layout_marginEnd="10dp"
@@ -610,7 +610,7 @@
 
         <Spinner
             android:id="@+id/ring2_increasing_spinner2"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/bg_spinner"
@@ -629,7 +629,7 @@
 
         <Spinner
             android:id="@+id/ring2_decreasing_spinner"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/bg_spinner"
@@ -672,7 +672,7 @@
 
         <Spinner
             android:id="@+id/ability_increasing_spinner1"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="22dp"
             android:layout_marginEnd="10dp"
@@ -693,7 +693,7 @@
 
         <Spinner
             android:id="@+id/ability_increasing_spinner2"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/bg_spinner"
@@ -712,7 +712,7 @@
 
         <Spinner
             android:id="@+id/ability_decreasing_spinner"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/bg_spinner"
@@ -755,7 +755,7 @@
 
         <Spinner
             android:id="@+id/gakin_book_increasing_spinner1"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="39dp"
             android:layout_marginEnd="10dp"
@@ -776,7 +776,7 @@
 
         <Spinner
             android:id="@+id/gakin_book_increasing_spinner2"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_marginTop="3dp"
 
