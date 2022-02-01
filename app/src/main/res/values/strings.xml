@@ -7,5 +7,8 @@
     <string name="title_notifications">Notifications</string>
     <string name="decrease_in_attack_power">공격력 감소</string>
     <string name="image_loading">이미지를 불러오고 있습니다</string>
+    <string name="admob_app_id">ca-app-pub-2371871412288415~3280366935</string>
+    <string name="admob_native_unit_id">ca-app-pub-2371871412288415/4751368880</string>
+    <string name="test_admob_id">ca-app-pub-3940256099942544/2247696110</string>
 
 </resources>
