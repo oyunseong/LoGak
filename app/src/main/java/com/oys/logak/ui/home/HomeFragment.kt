@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.viewModels
@@ -11,6 +13,12 @@ import com.oys.logak.R
 import com.oys.logak.base.BaseFragment
 import com.oys.logak.databinding.FragmentHomeBinding
 import com.oys.logak.extensions.log
+import com.oys.logak.model.Imprint
+import com.oys.logak.server.GithubAPI
+import com.oys.logak.server.RetrofitClient
+import retrofit2.Call
+import retrofit2.Response
+import retrofit2.Retrofit
 
 /**
  * 1. 증가 각인 선택했을 때 각인 이름과 비어있는 보석 15개가 화면 상단에 보여짐
@@ -22,6 +30,9 @@ import com.oys.logak.extensions.log
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private val map = mutableMapOf<String, Int>()
+
+    lateinit var retrofit: Retrofit
+    lateinit var githubAPI: GithubAPI
 
     // 커스텀뷰 어레이
     private val imprintingArray by lazy {
@@ -127,8 +138,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             imprintingView.visibility = View.GONE
         }
 
-        setupSpinner()
-
+        initServer()
 
         /**
          * 1. 각인 text / text 가 map 에 올라갔을 때 view visible
@@ -141,10 +151,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         homeViewModel.model.observe(viewLifecycleOwner, {
             "ui model observe $it".log()
             var index = 0
+            val animation: Animation = AlphaAnimation(0f, 1f)
+            animation.duration = 500;
 
             it.forEach {
                 imprintingArray[index].setImprintingModel(it)
                 imprintingArray[index].visibility = View.VISIBLE
+                imprintingArray[index].animation = animation
                 index++
             }
             // 1. score 만큼 보석 박기
@@ -157,15 +170,32 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         })
     }
 
+    private fun initServer() {
+        retrofit = RetrofitClient.getInstance()
+        githubAPI = retrofit.create(GithubAPI::class.java)
 
-    private fun setupSpinner() {
-        val increasingArray = resources.getStringArray(R.array.increasing_imprinting)
-        val battleImprintingArray = resources.getStringArray(R.array.battle_increasing_imprinting)
-        val decreasingArray = resources.getStringArray(R.array.decreasing_imprinting)
-        val accEffectNumberArray = resources.getStringArray(R.array.acc_effect_number)
-        val stoneEffectNumberArray = resources.getStringArray(R.array.ability_effect_number)
-        val gakinBookEffectNumberArray = resources.getStringArray(R.array.gakin_effect_number)
+        Runnable {
+            githubAPI.getImprintingArray()!!.enqueue(object : retrofit2.Callback<Imprint> {
+                override fun onResponse(call: Call<Imprint>, response: Response<Imprint>) {
+                    val imprint = response.body()
+                    if (imprint == null) {
+                        //토스트 띄우고 엠티뷰 노출
+                        return
+                    }
+                    "onResponse!".log("initServer")
+                    setupSpinner(imprint)
+                }
 
+                override fun onFailure(call: Call<Imprint>, t: Throwable) {
+                    "onFailure message : " + t.message.toString().log("initServer")
+                }
+
+            })
+        }.run()
+    }
+
+
+    private fun setupSpinner(imprint: Imprint) {
         // 각인 선택
         itemSpinnerArray.forEachIndexed { _, spinner ->
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
@@ -183,32 +213,32 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             }
         }
 
-        binding.necklaceIncreasingSpinner1.adapter = getSpinnerAdapter(increasingArray)
-        binding.necklaceIncreasingSpinner2.adapter = getSpinnerAdapter(increasingArray)
-        binding.necklaceDecreasingSpinner.adapter = getSpinnerAdapter(decreasingArray)
+        binding.necklaceIncreasingSpinner1.adapter = getSpinnerAdapter(imprint.getJobAndBattleImprintList())
+        binding.necklaceIncreasingSpinner2.adapter = getSpinnerAdapter(imprint.getJobAndBattleImprintList())
+        binding.necklaceDecreasingSpinner.adapter = getSpinnerAdapter(imprint.decreaseImprintList)
 
-        binding.earringIncreasingSpinner1.adapter = getSpinnerAdapter(increasingArray)
-        binding.earringIncreasingSpinner2.adapter = getSpinnerAdapter(increasingArray)
-        binding.earringDecreasingSpinner.adapter = getSpinnerAdapter(decreasingArray)
+        binding.earringIncreasingSpinner1.adapter = getSpinnerAdapter(imprint.getJobAndBattleImprintList())
+        binding.earringIncreasingSpinner2.adapter = getSpinnerAdapter(imprint.getJobAndBattleImprintList())
+        binding.earringDecreasingSpinner.adapter = getSpinnerAdapter(imprint.decreaseImprintList)
 
-        binding.earring2IncreasingSpinner1.adapter = getSpinnerAdapter(increasingArray)
-        binding.earring2IncreasingSpinner2.adapter = getSpinnerAdapter(increasingArray)
-        binding.earring2DecreasingSpinner.adapter = getSpinnerAdapter(decreasingArray)
+        binding.earring2IncreasingSpinner1.adapter = getSpinnerAdapter(imprint.getJobAndBattleImprintList())
+        binding.earring2IncreasingSpinner2.adapter = getSpinnerAdapter(imprint.getJobAndBattleImprintList())
+        binding.earring2DecreasingSpinner.adapter = getSpinnerAdapter(imprint.decreaseImprintList)
 
-        binding.ring1IncreasingSpinner1.adapter = getSpinnerAdapter(increasingArray)
-        binding.ring1IncreasingSpinner2.adapter = getSpinnerAdapter(increasingArray)
-        binding.ring1DecreasingSpinner.adapter = getSpinnerAdapter(decreasingArray)
+        binding.ring1IncreasingSpinner1.adapter = getSpinnerAdapter(imprint.getJobAndBattleImprintList())
+        binding.ring1IncreasingSpinner2.adapter = getSpinnerAdapter(imprint.getJobAndBattleImprintList())
+        binding.ring1DecreasingSpinner.adapter = getSpinnerAdapter(imprint.decreaseImprintList)
 
-        binding.ring2IncreasingSpinner1.adapter = getSpinnerAdapter(increasingArray)
-        binding.ring2IncreasingSpinner2.adapter = getSpinnerAdapter(increasingArray)
-        binding.ring2DecreasingSpinner.adapter = getSpinnerAdapter(decreasingArray)
+        binding.ring2IncreasingSpinner1.adapter = getSpinnerAdapter(imprint.getJobAndBattleImprintList())
+        binding.ring2IncreasingSpinner2.adapter = getSpinnerAdapter(imprint.getJobAndBattleImprintList())
+        binding.ring2DecreasingSpinner.adapter = getSpinnerAdapter(imprint.decreaseImprintList)
 
-        binding.abilityIncreasingSpinner1.adapter = getSpinnerAdapter(battleImprintingArray)
-        binding.abilityIncreasingSpinner2.adapter = getSpinnerAdapter(battleImprintingArray)
-        binding.abilityDecreasingSpinner.adapter = getSpinnerAdapter(decreasingArray)
+        binding.abilityIncreasingSpinner1.adapter = getSpinnerAdapter(imprint.battleImprintList)
+        binding.abilityIncreasingSpinner2.adapter = getSpinnerAdapter(imprint.battleImprintList)
+        binding.abilityDecreasingSpinner.adapter = getSpinnerAdapter(imprint.decreaseImprintList)
 
-        binding.gakinBookIncreasingSpinner1.adapter = getSpinnerAdapter(increasingArray)
-        binding.gakinBookIncreasingSpinner2.adapter = getSpinnerAdapter(increasingArray)
+        binding.gakinBookIncreasingSpinner1.adapter = getSpinnerAdapter(imprint.getJobAndBattleImprintList())
+        binding.gakinBookIncreasingSpinner2.adapter = getSpinnerAdapter(imprint.getJobAndBattleImprintList())
 
 
         // 스코어 스피너 부분
@@ -228,18 +258,22 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 }
             }
 
-            spinner.adapter = getSpinnerAdapter(accEffectNumberArray)
+            spinner.adapter = getSpinnerAdapter(imprint.accScoreList)
 
-            binding.abilityEffectNumberSpinner1.adapter = getSpinnerAdapter(stoneEffectNumberArray)
-            binding.abilityEffectNumberSpinner2.adapter = getSpinnerAdapter(stoneEffectNumberArray)
-            binding.abilityEffectNumberSpinner3.adapter = getSpinnerAdapter(stoneEffectNumberArray)
+            binding.abilityEffectNumberSpinner1.adapter = getSpinnerAdapter(imprint.abilityScoreList)
+            binding.abilityEffectNumberSpinner2.adapter = getSpinnerAdapter(imprint.abilityScoreList)
+            binding.abilityEffectNumberSpinner3.adapter = getSpinnerAdapter(imprint.abilityScoreList)
 
             binding.gakinBookEffectNumberSpinner1.adapter =
-                getSpinnerAdapter(gakinBookEffectNumberArray)
+                getSpinnerAdapter(imprint.bookScoreList)
             binding.gakinBookEffectNumberSpinner2.adapter =
-                getSpinnerAdapter(gakinBookEffectNumberArray)
+                getSpinnerAdapter(imprint.bookScoreList)
         }
+    }
 
+    fun reset() {
+        //배열에 담긴 스피너 반복문 돌리면서 클리어 시키기
+        //스피너 상태 viewmodel에 반영시키기
     }
 
     private fun getSelectedSpinnerItem() {
@@ -263,7 +297,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         }
     }
 
-    private fun getSpinnerAdapter(spinnerArray: Array<String>): ArrayAdapter<String> {
+    private fun getSpinnerAdapter(spinnerArray: List<String>): ArrayAdapter<String> {
         return ArrayAdapter(
             requireContext(),
             R.layout.item_spinner,
