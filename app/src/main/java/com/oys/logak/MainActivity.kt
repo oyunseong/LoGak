@@ -1,27 +1,14 @@
 package com.oys.logak
 
-import android.app.Application
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.provider.Settings
-import android.util.Log
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.RequestConfiguration
 import com.oys.logak.base.BaseActivity
 import com.oys.logak.databinding.ActivityMainBinding
 import gun0912.ted.tedadmobdialog.OnBackPressListener
-
 import gun0912.ted.tedadmobdialog.TedAdmobDialog
-import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
-import java.util.*
 
 
 class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inflate(it) }) {
@@ -38,16 +25,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
 
         // 삼성폰 B6046CCCC3E12F59B3D241E87EE99842
         // 애뮬레이터 E8BB89F8382E0F48617270ACF53AD6F6
-        val testDeviceIds = listOf("B6046CCCC3E12F59B3D241E87EE99842")
-        val configuration = RequestConfiguration.Builder().setTestDeviceIds(testDeviceIds).build()
-        MobileAds.setRequestConfiguration(configuration)
+//        val testDeviceIds = listOf("B6046CCCC3E12F59B3D241E87EE99842")
+//        val configuration = RequestConfiguration.Builder().setTestDeviceIds(testDeviceIds).build()
+//        MobileAds.setRequestConfiguration(configuration)
 
         nativeTedAdmobDialog =
             TedAdmobDialog.Builder(
                 this,
                 TedAdmobDialog.AdType.NATIVE,
                 getString(R.string.admob_native_unit_id)
-//                getString(R.string.test_admob_id)
             ) //네이티브 광고 unit id
                 .setOnBackPressListener(object : OnBackPressListener {
                     override fun onReviewClick() {
@@ -71,11 +57,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
         nativeTedAdmobDialog?.loadNative()
 
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+//        val navController = findNavController(R.id.nav_host_fragment_activity_main)
 //        binding.navView.setupWithNavController(navController)
     }
 
-    fun showAdmobDialog() {
+    private fun showAdmobDialog() {
         nativeTedAdmobDialog?.show();
     }
 
