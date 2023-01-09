@@ -11,5 +11,7 @@ Google PlayStore : https://play.google.com/store/apps/details?id=com.oys.logak
 
 ![unnamed 작게 2](https://user-images.githubusercontent.com/42116216/201800478-aae59cea-e851-4296-8092-9554e40cf149.jpeg)
 
+![로각-gif-maker](https://user-images.githubusercontent.com/42116216/211295975-c70afa90-dc00-4a70-82c3-330c99344a60.gif)
+
 ## 사용 기술 스택 : 
 - Android AAC, Kotlin, MVVM, Coroutine, Glide, CustomView, Retrofit2, github.io
