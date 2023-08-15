@@ -5,7 +5,7 @@ Google PlayStore : https://play.google.com/store/apps/details?id=com.oys.logak
 
 ## 앱 화면 :
 
-<img src="https://user-images.githubusercontent.com/42116216/201799230-edfdfab2-5620-4e94-a6b7-17ec451c7e89.jpeg" width="300" height="533.33"/> <img src="https://user-images.githubusercontent.com/42116216/201799480-8d7cde2e-4a58-448f-8ebd-90630fbc4245.jpeg" width="300" height="533.33"/> <img src="https://user-images.githubusercontent.com/42116216/201800478-aae59cea-e851-4296-8092-9554e40cf149.jpeg" width="300" height="533.33"/> <img src="https://user-images.githubusercontent.com/42116216/211295975-c70afa90-dc00-4a70-82c3-330c99344a60.gif" width="300" height="533.33"/>
+<img src="https://user-images.githubusercontent.com/42116216/201799230-edfdfab2-5620-4e94-a6b7-17ec451c7e89.jpeg" width="360" height="600"/> <img src="https://user-images.githubusercontent.com/42116216/201799480-8d7cde2e-4a58-448f-8ebd-90630fbc4245.jpeg" width="300" height="533.33"/> <img src="https://user-images.githubusercontent.com/42116216/201800478-aae59cea-e851-4296-8092-9554e40cf149.jpeg" width="300" height="533.33"/> <img src="https://user-images.githubusercontent.com/42116216/211295975-c70afa90-dc00-4a70-82c3-330c99344a60.gif" width="300" height="533.33"/>
 
 ---
 
