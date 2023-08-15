@@ -1,5 +1,5 @@
-# LoGak - "로스트아크 각인"의 줄임말.
-로스트아크 액세서리 구입을 도와주는 툴앱입니다.
+# LoGak
+로각은 "로스트아크 각인"의 줄임말로, 로스트아크 액세서리(각인) 구입을 도와주는 툴앱입니다.
 
 Google PlayStore : https://play.google.com/store/apps/details?id=com.oys.logak
 
